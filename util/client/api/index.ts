@@ -1,0 +1,1 @@
+export {postService,getService} from './service'

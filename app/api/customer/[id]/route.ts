@@ -2,18 +2,23 @@
 // import { Prisma } from "@prisma/client";
 
 // import { response, apiResponse } from "@/util/server/api";
-// import { createCustomer, readCustomer } from "@/util/server/model";
+// import { deleteCustomer, updateCustomer } from "@/util/server/model";
 
-// export const GET = async () => {
+// export const PATCH = async (
+//   req: NextRequest,
+//   { params }: { params: { id: number } }
+// ) => {
 //   const r = { ...response };
+//   const { id } = params;
+//   const payload: Prisma.CustomerUpdateInput = await req.json();
 //   try {
-//     const result = await readCustomer();
+//     const result = await updateCustomer(id, payload);
 //     r.status = {
 //       type: "success",
 //       code: 200,
 //     };
 //     r.resbonse = {
-//       message: "read customer success",
+//       message: "update customer success",
 //       data: result,
 //     };
 //   } catch (error) {
@@ -29,17 +34,20 @@
 //   return apiResponse(r);
 // };
 
-// export const POST = async (req: NextRequest) => {
+// export const DELETE = async (
+//   _: NextRequest,
+//   { params }: { params: { id: number } }
+// ) => {
 //   const r = { ...response };
-//   const payload: Prisma.CustomerCreateInput = await req.json();
+//   const { id } = params;
 //   try {
-//     const result = await createCustomer(payload);
+//     const result = await deleteCustomer(id);
 //     r.status = {
 //       type: "success",
-//       code: 201,
+//       code: 200,
 //     };
 //     r.resbonse = {
-//       message: "create customer success",
+//       message: "delete customer success",
 //       data: result,
 //     };
 //   } catch (error) {

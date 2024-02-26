@@ -6,19 +6,35 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:local:push": "dotenv -e .env.local prisma db push"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^1.1.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.6",
+    "@prisma/client": "5.8.1",
+    "@stylexjs/stylex": "^0.5.1",
+    "axios": "^1.6.7",
+    "next": "14.1.0",
+    "next-auth": "^4.24.5",
+    "prisma": "^5.8.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "react-hook-form": "^7.49.3",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@stylexjs/babel-plugin": "^0.5.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
+  },
+  "prisma": {
+    "schema": "util/server/prisma/schema.prisma"
   }
 }
